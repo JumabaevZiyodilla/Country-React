@@ -8,7 +8,7 @@ function CountryInfo() {
 
   const { countryName } = useParams()
 
-  const getCountryByName = async () => {
+  const getCountryByName = async (countryName) => {
     try {
       const res = await fetch(
         `https://restcountries.com/v3.1/name/${countryName}`,
@@ -23,7 +23,7 @@ function CountryInfo() {
   }
 
   useEffect(() => {
-    getCountryByName()
+    getCountryByName(countryName)
   }, [countryName])
 
   // console.log(country.map(element => console.log(element.name.nativeName[0][0])))
@@ -35,8 +35,8 @@ function CountryInfo() {
             Back
           </Link>
           {country?.map((element) => (
-            <div className="capital__wrap">
-              <img src={element.flags.svg} width="559" height="483"></img>
+            <div className="capital__wrap" key={element.name.common}>
+              <img src={element.flags.svg} width="559" height="483" alt={element.name.common}></img>
               <div>
                 <h3 className="capital__title">{element.name.common}</h3>
                 <div className="capital__box">
@@ -82,7 +82,7 @@ function CountryInfo() {
                     <p className="capital__currencies">
                       Currencies:
                       <span className="capital__currencies-span">
-                        {element.currencies[Object.keys(element.currencies)].name}
+                        {element.currencies[Object.keys(element.currencies)]?.name}
                       </span>
                     </p>
                     <p className="capital__languages">
@@ -92,6 +92,7 @@ function CountryInfo() {
                       </span>
                     </p>
                   </div>
+              
                 </div>
                   <div className='capital__borders'>Border Countries: {element.borders?.map(element => <button className='capital-border'>{element}</button>)}</div>
               </div>

@@ -93,14 +93,15 @@ const AllCountries = () => {
             {data.loading && <h1>Loading...</h1>}
             {data.isError && <h1>Error...</h1>}
             {data.data &&
-              data.data.map((element) => (
-                <Link to={`/country/${element.name.common}`}>
-                  <li className="country-list__item" key={element.name.common}>
+              data.data?.map((element) => (
+                <Link to={`/country/${element.name.common}`} key={element.name.common}>
+                  <li className="country-list__item" >
                     <img
                       className="country-list__img"
                       src={element.flags.svg}
                       width="264"
                       height="160"
+                      alt={element.name.common}
                     ></img>
                     <div className="country-list__box">
                       <h3 className="country-list__title">
