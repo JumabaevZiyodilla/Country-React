@@ -8,7 +8,7 @@ const SelectCountry = ({onSelect}) => {
     }
   return (
     <select onChange={selectHandler} className="country-form__select">
-      <option>Filter by Region</option>
+      <option selected disabled>Filter by Region</option>
       <option value="Africa">Africa</option>
       <option value="America">America</option>
       <option value="Asia">Asia</option>
