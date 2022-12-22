@@ -1,5 +1,6 @@
 .capital {
   padding-top: 160px !important;
+  background-color: var(--section-bgColor) !important;
 }
 .capital-link {
   display: inline-flex;
@@ -9,9 +10,9 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
-  color: #111517;
+  color: var(--color-black);
   border: none;
-  background: #ffffff;
+  background-color: var(--header-bgColor);
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
   border-radius: 6px;
 }
@@ -42,7 +43,7 @@
   font-weight: 800;
   font-size: 32px;
   line-height: 44px;
-  color: #111517;
+  color: var(--color-black);
 }
 .capital__native,
 .capital__population,
@@ -56,7 +57,7 @@
   font-size: 16px;
   line-height: 32px;
   font-weight: 700;
-  color: #111517;
+  color: var(--color-black);
 }
 .capital__native-span,
 .capital__population-span,
@@ -76,7 +77,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #111517;
+  color: var(--color-black);
 }
 .capital-border {
   margin-left: 15px;
@@ -84,8 +85,8 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 19px;
-  color: #111517;
-  background: #ffffff;
+  color: var(--color-black);
+  background-color: var(--header-bgColor);
   border: none;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
   border-radius: 2px;

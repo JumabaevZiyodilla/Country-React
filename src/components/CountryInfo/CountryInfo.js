@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './countryinfo.css'
+import { ThemeContext } from '../../context/ThemeContext'
+import { t } from 'i18next'
+
 
 function CountryInfo() {
+  const {theme} = useContext(ThemeContext)
   const [country, setCountry] = useState([])
 
   const { countryName } = useParams()
@@ -26,13 +30,12 @@ function CountryInfo() {
     getCountryByName(countryName)
   }, [countryName])
 
-  // console.log(country.map(element => console.log(element.name.nativeName[0][0])))
   return (
     <>
-      <section className="capital">
+      <section className={`capital  ${theme}`}>
         <div className="container">
           <Link className="capital-link" to="/">
-            Back
+            {t("back")}
           </Link>
           {country?.map((element) => (
             <div className="capital__wrap" key={element.name.common}>
@@ -42,31 +45,31 @@ function CountryInfo() {
                 <div className="capital__box">
                   <div>
                     <p className="capital__native">
-                      Native Name:
+                      {t("nativeName")}:
                       <span className="capital__native-span">
                         {element.name.official}
                       </span>
                     </p>
                     <p className="capital__population">
-                      Population:
+                      {t("population")}:
                       <span className="capital__population-span">
                         {element.population}
                       </span>
                     </p>
                     <p className="capital__region">
-                      Region:
+                      {t("region")}:
                       <span className="capital__region-span">
                         {element.region}
                       </span>
                     </p>
                     <p className="capital__subregion">
-                      Sub Region:
+                      {t("subRegion")}:
                       <span className="capital__subregion-span">
                         {element.subregion}
                       </span>
                     </p>
                     <p className="capital__capital">
-                      Capital:
+                      {t("capital")}:
                       <span className="capital__capital-span">
                         {element.capital}
                       </span>
@@ -74,19 +77,19 @@ function CountryInfo() {
                   </div>
                   <div className="capital__top-box">
                     <p className="capital__top">
-                      Top Level Domain:
+                      {t("topLevelDomain")}:
                       <span className="capital__top-span">
                         {element.tld.map((element) => element)}
                       </span>
                     </p>
                     <p className="capital__currencies">
-                      Currencies:
+                      {t("currencies")}:
                       <span className="capital__currencies-span">
                         {element.currencies[Object.keys(element.currencies)]?.name}
                       </span>
                     </p>
                     <p className="capital__languages">
-                      Languages:
+                      {t("languages")}:
                       <span className="capital__languages-span">
                         {Object.values(element.languages)}
                       </span>
@@ -94,7 +97,7 @@ function CountryInfo() {
                   </div>
               
                 </div>
-                  <div className='capital__borders'>Border Countries: {element.borders?.map(element => <button className='capital-border'>{element}</button>)}</div>
+                  <div className='capital__borders'>{t("borderCountries")}: {element.borders?.map(element => <button className='capital-border'>{element}</button>)}</div>
               </div>
             </div>
           ))}

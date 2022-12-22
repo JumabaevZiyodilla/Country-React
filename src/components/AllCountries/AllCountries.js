@@ -3,8 +3,12 @@ import './allcountries.css'
 import Form from '../Form/Form'
 import SelectCountry from '../Form/SelectCountry'
 import { Link } from 'react-router-dom'
+import { ThemeContext} from '../../context/ThemeContext'
+import { useContext } from 'react'
+import { t } from 'i18next'
 
 const AllCountries = () => {
+  const {theme} = useContext(ThemeContext)
   const [data, setData] = useState({
     loading: true,
     data: [],
@@ -83,7 +87,7 @@ const AllCountries = () => {
 
   return (
     <>
-      <section className="country">
+      <section className={`${theme} country`}>
         <div className="container">
           <div className="form-box">
             <Form onSearch={getCountryByname} />
@@ -108,19 +112,19 @@ const AllCountries = () => {
                         {element.name.common}
                       </h3>
                       <p className="country-list__population">
-                        Population:
+                        {t("population")}:
                         <span className="country-list__population-span">
                           {element.population}
                         </span>
                       </p>
                       <p className="country-list__region">
-                        Region:
+                        {t("region")}:
                         <span className="country-list__region-span">
                           {element.region}
                         </span>
                       </p>
                       <p className="country-list__capital">
-                        Capital:
+                        {t("capital")}:
                         <span className="country-list__capital-span">
                           {element.capital}
                         </span>

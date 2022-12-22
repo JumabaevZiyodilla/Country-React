@@ -1,47 +1,58 @@
 @font-face {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-        url('../fonts/nunito-sans-v12-latin-regular.woff2') format('woff2'),
-        url('../fonts/nunito-sans-v12-latin-regular.woff') format('woff');
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/nunito-sans-v12-latin-regular.woff2") format("woff2"),
+    url("../fonts/nunito-sans-v12-latin-regular.woff") format("woff");
 }
 
 @font-face {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-        url('../fonts/nunito-sans-v12-latin-600.woff2') format('woff2'),
-        url('../fonts/nunito-sans-v12-latin-600.woff') format('woff');
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""),
+    url("../fonts/nunito-sans-v12-latin-600.woff2") format("woff2"),
+    url("../fonts/nunito-sans-v12-latin-600.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 800;
-    src: local(''),
-        url('../fonts/nunito-sans-v12-latin-800.woff2') format('woff2'),
-        url('../fonts/nunito-sans-v12-latin-800.woff') format('woff');
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""),
+    url("../fonts/nunito-sans-v12-latin-800.woff2") format("woff2"),
+    url("../fonts/nunito-sans-v12-latin-800.woff") format("woff");
 }
-
-*{
-    box-sizing: border-box;
+:root {
+  --color-white: #fff;
+  --color-black: #111517;
+  --section-bgColor: #f2f2f2;
+  --header-bgColor: #fff;
 }
-body{
-    margin: 0px;
-    font-family: "Nunito Sans", "Arial", sans-serif;
-    font-weight: 400;
-    background-color: #F2F2F2;
-    overflow-x: hidden;
+.dark {
+  --color-white: #111517;
+  --color-black: #fff;
+  --section-bgColor: #202c36;
+  --header-bgColor: #2b3844;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: "Nunito Sans", "Arial", sans-serif;
+  font-weight: 400;
+  background-color: var(--section-bgColor);
+  overflow-x: hidden;
 }
 ul,
-ol{
-    margin: 0px;
-    padding-left: 0px;
-    list-style-type: none;
+ol {
+  margin: 0px;
+  padding-left: 0px;
+  list-style-type: none;
 }
-a{
-    display: inline-block;
-    text-decoration: none;
+a {
+  display: inline-block;
+  text-decoration: none;
 }

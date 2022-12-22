@@ -1,3 +1,4 @@
+import { t } from 'i18next'
 import React, { useState } from 'react'
 import "./form.css"
 
@@ -19,7 +20,7 @@ const Form = ({ onSearch }) => {
           value={input}
           onChange={(evt) => setInput(evt.target.value)}
           name="search"
-          placeholder="Search for a country…"
+          placeholder={t("search")}
           aria-label="Country search"
         />
       </label>
